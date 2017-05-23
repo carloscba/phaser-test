@@ -4,7 +4,6 @@ gameBall.Game = function(game) {
 };
 
 gameBall.Game.prototype = {
-    
     create : function(){
         this.physics.startSystem(Phaser.Physics.ARCADE);
         /*
@@ -14,10 +13,6 @@ gameBall.Game.prototype = {
         this.buildWorld();
         this.buildBall();
         this.buildBotin();         
-    },
-
-    update : function(){
-        this.physics.arcade.collide(this.ball, this.botin, this.hitCallback, null, this);
     },
 
     buildWorld : function(){
@@ -71,10 +66,18 @@ gameBall.Game.prototype = {
 
     resetBall : function(ball){
         ball.reset(this.rnd.integerInRange(0, this.world.width), 0);
-    }
-
-
-
-
-
+    },
+    update : function(){
+        this.physics.arcade.collide(this.ball, this.botin, this.hitCallback, null, this);
+        if (this.input.mousePointer.isDown){
+            //  400 is the speed it will move towards the mouse
+            this.physics.arcade.moveToPointer(this.botin, 600);
+            //  if it's overlapping the mouse, don't move any more
+            if (Phaser.Rectangle.contains(this.botin.body, this.input.x, this.input.y)){
+                this.botin.body.velocity.setTo(0, 0);
+            }
+        }else{
+            this.botin.body.velocity.setTo(0, 0);
+        }
+    },
 };
