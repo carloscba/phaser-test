@@ -6,13 +6,11 @@ gameBall.Game = function(game) {
 gameBall.Game.prototype = {
     
     create : function(){
-        
         this.physics.startSystem(Phaser.Physics.ARCADE);
         /*
         this.physics.startSystem(Phaser.Physics.P2JS);
         this.physics.p2.restitution = 0.9;
         */
-        
         this.buildWorld();
         this.buildBall();
         this.buildBotin();         
@@ -58,7 +56,7 @@ gameBall.Game.prototype = {
     MySetBound : function(ball){
         ball.body.gravity.x = this.rnd.integerInRange(-70, 70);
         ball.body.gravity.y = 100 + Math.random() * 100;
-        ball.body.bounce.setTo(this.rnd.integerInRange(1,1.1), this.rnd.integerInRange(1,1.1));
+        ball.body.bounce.setTo(this.rnd.integerInRange(1,0.8), this.rnd.integerInRange(1,0.8));
     },
 
     hitCallback : function(ball){

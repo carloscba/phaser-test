@@ -16,13 +16,15 @@ gameBall.Boot.prototype = {
     create : function(){
         this.input.maxPointers = 1;
         this.stage.disableVisibilityChange = false;
-        this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
-        this.scale.minWidth = 270;
-        this.scale.minHeight = 480;
+        /*this.scale.scaleMode = Phaser.ScaleManager.NO_SCALE;*/
+        this.scale.scaleMode = Phaser.ScaleManager.NO_SCALE;
+        this.scale.parentIsWindow = false;        
+        this.scale.minWidth = 375;
+        this.scale.minHeight = 667;
         this.scale.pageAlignHorizontall = true;
         this.scale.pageAlignVertically = true;
-        this.scale.forcePortrait = true;
-        this.scale.setScreenSize = true;
+        this.scale.forcePortrait = false;
+        this.scale.setScreenSize = false;
 
         this.input.addPointer();
         this.stage.backgroundColor = '#000000';
