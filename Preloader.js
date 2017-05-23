@@ -7,12 +7,14 @@ gameBall.Preloader = function(game){
 gameBall.Preloader.prototype = {
 
     preload: function(){
-        this.preloadBar = this.add.sprite(this.world.centerX, this.world.centerY, 'loader');
+        this.preloadBar = this.add.sprite(this.world.centerX, this.world.centerY+50, 'loader');
         this.preloadBar.anchor.setTo(0.5, 0.5);
         this.load.setPreloadSprite(this.preloadBar);
         
-        this.titleText = this.add.image(this.world.centerX, this.world.centerY - 200, 'title-text');
+        this.titleText = this.add.image(this.world.centerX, this.world.centerY, 'title-text');
         this.titleText.anchor.setTo(0.5, 0.5);
+
+        this.load.bitmapFont('littera', 'fonts/font.png', 'fonts/font.fnt');
     },
 
     create: function(){
@@ -21,6 +23,7 @@ gameBall.Preloader.prototype = {
 
     update: function(){
         this.ready = true;
+        this.state.start('StartMenu');
     },    
 
 }

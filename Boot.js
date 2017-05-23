@@ -6,7 +6,7 @@ gameBall.Boot.prototype = {
     preload : function(){
         this.load.image('loader', './images/loader.png');
         this.load.image('title-background', './images/title-background.jpg');
-        this.load.image('title-text', './images/title-text.jpg');
+        this.load.image('title-text', './images/title-text.png');
         this.load.image('ball', './images/ball.png');
         this.load.image('botin', './images/botin.png');        
     },
