@@ -9,6 +9,7 @@
     <script src="./Boot.js"></script>
     <script src="./Preloader.js"></script>
     <script src="./StartMenu.js"></script>
+    <script src="./Game.js"></script>
 </head>
 <body>
     <div id="gameContainer"></div>
@@ -18,6 +19,7 @@
             game.state.add('Boot', gameBall.Boot);
             game.state.add('Preloader', gameBall.Preloader);
             game.state.add('StartMenu', gameBall.StartMenu);
+            game.state.add('Game', gameBall.Game);
             game.state.start('Boot');
         }
     </script>

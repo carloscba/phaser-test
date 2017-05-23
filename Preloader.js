@@ -14,7 +14,11 @@ gameBall.Preloader.prototype = {
         this.titleText = this.add.image(this.world.centerX, this.world.centerY, 'title-text');
         this.titleText.anchor.setTo(0.5, 0.5);
 
+        /*
         this.load.bitmapFont('littera', 'fonts/font.png', 'fonts/font.fnt');
+        this.load.image('game-background','images/game-background.jpg');
+        this.load.image('ball','images/ball.png');
+        */
     },
 
     create: function(){
